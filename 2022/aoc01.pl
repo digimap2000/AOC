@@ -2,6 +2,8 @@
 use List::Util qw/sum/;
 
 #
+# RUCKSACK CALORIES
+#
 # A fiendish exercise in slurping files. Since the rucksacks are
 # demarqued by blank lines we can overwrite the readline splitter
 # to fetch entire rucksacks at a time. Then it's simple enough to
