@@ -1,1 +1,1 @@
-Introduced to this by Milo at Naim Audio Ltd.
+Introduced to this by Milo at Naim Audio Ltd. For reasons not immediately obvious at the time I decided to use this as a perl refresher course. It's been almost 20 years since writing oodles of perl cgi in the noughties.
