@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 #
+# ROCK PAPER SCISSORS with monkeys
+#
 # When playing arg(0) against arg(1) obviously equality is
 # a draw but the trick is to recognise winners lead losers
 # and losers lead winners when played numerically on a 
@@ -39,9 +41,9 @@ sub part {
 # paper, scissors no matter who plays them. 
 #
 while (<>) {
-    $_ =~ s/[AX]/0/g;
-    $_ =~ s/[BY]/1/g;
-    $_ =~ s/[CZ]/2/g;
+    s/[AX]/0/g;
+    s/[BY]/1/g;
+    s/[CZ]/2/g;
     push (@rounds, $_);
 }
 
