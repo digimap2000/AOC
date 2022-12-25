@@ -8,25 +8,20 @@ sub digitTranslate {
 
 sub toSnafu {
     my ($dec,$ans) = @_;
-    for $c (0..31)
+    for (reverse 0..31)
     {
-        $base = 5 ** (31-$c);
+        $base = 5 ** $_;
         $digit = round($dec / $base);
         $dec -= $base * $digit;
-        $ans .= digitTranslate($digit);
+        $ans .= digitTranslate($digit) if $ans || $digit ne '0';
     }
-    $ans =~ s/^[0]*//;
     return $ans;
 }
 
 sub toDecimal {
-    my ($snafu,$ans) = @_;
-    my ($dec,$mul) = (0,1);
-    for (reverse split //, $snafu) {
-        $dec += $mul * digitTranslate($_);
-        $mul *= 5;
-    }
-    return $dec;
+    my ($ans,$mul);
+    $ans += (5 ** ++$mul) * digitTranslate($_) for (reverse split //, @_[0]);
+    return $ans;
 }
 
 while (<>) {
