@@ -1,6 +1,6 @@
 while (<>) {
     chomp();
-    push(@map,[split(//,$_)])
+    push @map, [split //];
 };
 
 sub expand {
@@ -33,8 +33,7 @@ sub perimeter {
 
 foreach my $y (0..scalar @map-1) {
     foreach my $x (0..scalar @map-1) {
-        next if $map[$x][$y] eq '.';
-        ($p1, $p2) = perimeter($p1, $p2, expand({},$x,$y,$map[$x][$y]));
+        ($p1, $p2) = perimeter($p1, $p2, expand({},$x,$y,$map[$x][$y])) unless $map[$x][$y] eq '.';
     }
 }
 
