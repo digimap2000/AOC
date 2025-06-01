@@ -11,9 +11,15 @@ my_dict = {
     9: ("9", "nine")
 }
 
-def find_keyword(d: dict[int, tuple[str, ...]], text: str, reverse: bool = False) -> int | None:
+
+def find_keyword(
+    d: dict[int, tuple[str, ...]],
+    text: str,
+    reverse: bool = False
+) -> int | None:
     """
-    Find the first key in the dictionary to match one of its values from either end of the text
+    Find the first key in the dictionary to match one of its values 
+    from either end of the text
     """
     check_func = text.endswith if reverse else text.startswith
     for key, keywords in d.items():
@@ -21,7 +27,11 @@ def find_keyword(d: dict[int, tuple[str, ...]], text: str, reverse: bool = False
             return key
     return None
 
-def find(line: str, reverse: bool = False) -> int | None:
+
+def find(
+    line: str,
+    reverse: bool = False
+) -> int | None:
     """
     Find the first matching keyword from either end of the line
     """
@@ -31,6 +41,7 @@ def find(line: str, reverse: bool = False) -> int | None:
             return key
         line = line[:-1] if reverse else line[1:]
     return None
+
 
 def main():
     with open("day-01/input.txt", "r") as f:
@@ -42,8 +53,6 @@ def main():
             total += int(first)*10 + int(last)
         print("Answer: ", total)
 
+
 if __name__ == "__main__":
     main()
-
-
-
