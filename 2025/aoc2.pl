@@ -1,7 +1,7 @@
 use strict;
 my ($p1,$p2) = (0,0);
 
-# Check if the passed value produces identical pieces when split 
+# Check if the passed value produces identical pieces when split into
 # some number of equally sized chunks. Does this by verifying that
 # all digits match their equivalent position in the first chunk.
 sub isEqualChunks {
