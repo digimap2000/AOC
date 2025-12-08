@@ -116,6 +116,6 @@ foreach (reverse sort {$sorta->{$a} <=> $sorta->{$b}} keys %{$sorta} )
 #print Dumper $circuits;
 #print Dumper $sort;
 
-print "Part One: " . $p1 . "\n";   # 1533
-print "Part Two: " . $p2 . "\n";   # 10733529153890
+print "Part One: " . $p1 . "\n";   # 54180
+print "Part Two: " . $p2 . "\n";   # 25325968
 
